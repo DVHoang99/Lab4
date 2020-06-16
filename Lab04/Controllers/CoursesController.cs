@@ -27,7 +27,7 @@ namespace Lab04.Controllers
         }
         [Authorize]
         [HttpPost]
-        // 16/6/2020
+        // 16/6/2020 
         public ActionResult Create(CourseViewModel viewModel)
         {
             if (!ModelState.IsValid)
