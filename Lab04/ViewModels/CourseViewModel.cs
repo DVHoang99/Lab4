@@ -21,11 +21,11 @@ namespace Lab04.ViewModels
         public byte Category { get; set; }
 
         public IEnumerable<Category> Categories { get; set; }
-       
+
 
         public DateTime GetDateTime()
         {
-            return DateTime.Parse(string.Format("{0} {1}",Date,Time));
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     }
 

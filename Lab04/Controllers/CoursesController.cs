@@ -16,36 +16,35 @@ namespace Lab04.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-        // GET: Courses
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
             {
-                Categories = _dbContext.Categories.ToList()
+                Categories = _dbContext.Categories.ToList(),
             };
             return View(viewModel);
         }
-
         [Authorize]
         [HttpPost]
-        public ActionResult Create (CourseViewModel ViewModel)
+        // 16/6/2020
+        public ActionResult Create(CourseViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
-                ViewModel.Categories = _dbContext.Categories.ToList();
-                return View("Create", ViewModel);
-            }
-
+                viewModel.Categories = _dbContext.Categories.ToList();
+                return View("Create", viewModel);
+            };
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
-                DateTime = ViewModel.GetDateTime(),
-                CategoryId = ViewModel.Category,
-                Place = ViewModel.Place
+                DateTime = viewModel.GetDateTime(),
+                CategoryId = viewModel.Category,
+                Place = viewModel.Place,
             };
-
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
+
             return RedirectToAction("Index", "Home");
         }
 

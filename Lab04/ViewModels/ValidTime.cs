@@ -16,7 +16,7 @@ namespace Lab04.ViewModels
             CultureInfo.CurrentCulture,
             DateTimeStyles.None,
             out dateTime);
-            return isValid ;
+            return isValid;
         }
     }
 }
