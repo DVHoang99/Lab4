@@ -7,9 +7,9 @@ namespace Lab04.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (1, 'DEVELOPMENT')");
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (2, 'BUSINESS')");
-            Sql("INSERT INTO CATEGORIES (ID, NAME) VALUES (3, 'MARKETING')");
+            Sql("insert into categories(id,name) values(1,'Development')");
+            Sql("insert into categories(id,name) values(2,'Business')");
+            Sql("insert into categories(id,name) values(3,'Marketing')");
         }
         
         public override void Down()

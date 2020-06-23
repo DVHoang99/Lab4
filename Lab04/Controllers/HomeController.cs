@@ -17,9 +17,17 @@ namespace Lab04.Controllers
         }
         public ActionResult Index()
         {
-            //var upcommingCourses = _dbContext.Courses.Include(c => c.Lecturer).Include(c => c.Category).Where(c => c.DateTime > DateTime.Now);
-            //return View(upcommingCourses);
-            return View();
+            var upcommingCourse = _dbContext.Courses
+                           .Include(c => c.Lecturer)
+                           .Include(c => c.Category)
+                           .Where(c => c.DateTime > DateTime.Now)
+                           .OrderBy(c => c.DateTime);
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcommingCourse,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
         }
 
         public ActionResult About()

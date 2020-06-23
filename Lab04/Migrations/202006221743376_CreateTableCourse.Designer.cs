@@ -13,7 +13,7 @@ namespace Lab04.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006160225211_CreateTableCourse"; }
+            get { return "202006221743376_CreateTableCourse"; }
         }
         
         string IMigrationMetadata.Source
