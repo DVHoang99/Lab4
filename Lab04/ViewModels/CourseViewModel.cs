@@ -6,7 +6,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Lab4.ViewModels
+namespace Lab04.ViewModels
 {
     public class CourseViewModel
     {

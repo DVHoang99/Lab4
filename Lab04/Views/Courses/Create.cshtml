@@ -1,10 +1,10 @@
-﻿@model Lab4.ViewModels.CourseViewModel
+﻿@model Lab04.ViewModels.CourseViewModel
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>@Model.Heading</h2>
-@using (Html.BeginForm(Model.Action, "Courses"))
+@using (Html.BeginForm("Create", "Courses"))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.Id)

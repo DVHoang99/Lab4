@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-namespace Lab4.ViewModels
+namespace Lab04.ViewModels
 {
     public class FutureDate:ValidationAttribute
     {

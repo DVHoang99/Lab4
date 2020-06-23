@@ -1,6 +1,6 @@
 ﻿
 using Lab04.Models;
-using Lab4.ViewModels;
+using Lab04.ViewModels;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Mvc;

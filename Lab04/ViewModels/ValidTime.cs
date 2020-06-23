@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
-namespace Lab4.ViewModels
+namespace Lab04.ViewModels
 {
     public class ValidTime:ValidationAttribute
     {

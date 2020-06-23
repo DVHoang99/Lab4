@@ -1,4 +1,5 @@
 ﻿using Lab04.Models;
+using Lab04.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,14 +21,9 @@ namespace Lab04.Controllers
             var upcommingCourse = _dbContext.Courses
                            .Include(c => c.Lecturer)
                            .Include(c => c.Category)
-                           .Where(c => c.DateTime > DateTime.Now)
-                           .OrderBy(c => c.DateTime);
-            var viewModel = new CoursesViewModel
-            {
-                UpcommingCourses = upcommingCourse,
-                ShowAction = User.Identity.IsAuthenticated
-            };
-            return View(viewModel);
+                           .Where(c => c.DateTime > DateTime.Now);
+
+            return View(upcommingCourse);
         }
 
         public ActionResult About()
